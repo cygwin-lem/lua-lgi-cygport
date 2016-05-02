@@ -1,0 +1,23 @@
+inherit lua
+
+NAME="lua-lgi"
+VERSION=0.9.0
+RELEASE=1
+CATEGORY="Lua"
+SUMMARY="GObject Introspection for Lua"
+DESCRIPTION="LGI is gobject-introspection based dynamic Lua binding to GObject
+based libraries. It allows using GObject-based libraries directly from Lua."
+HOMEPAGE="https://github.com/pavouk/lgi"
+SRC_URI="${HOMEPAGE}/archive/${VERSION}/lgi-${VERSION}.tar.gz"
+SRC_DIR="lgi-${VERSION}"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	cyginstall PREFIX=/usr LUA_LIBDIR=${LUA_LIBDIR} LUA_SHAREDIR=${LUA_SCRIPTDIR}
+}

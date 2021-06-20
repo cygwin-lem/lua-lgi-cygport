@@ -1,6 +1,6 @@
 NAME="lua-lgi"
 VERSION=0.9.2p62
-RELEASE=1
+RELEASE=10
 CATEGORY="Lua"
 SUMMARY="GObject Introspection for Lua"
 DESCRIPTION="\
